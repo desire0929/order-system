@@ -62,8 +62,8 @@ public class AutoFillAspect {
 
                 //通过反射为对象属性赋值
                 setCreateTime.invoke(entity,now);
-                setUpdateTime.invoke(entity,now);
                 setCreateUser.invoke(entity,currentId);
+                setUpdateTime.invoke(entity,now);
                 setUpdateUser.invoke(entity,currentId);
 
             } catch (Exception e) {
