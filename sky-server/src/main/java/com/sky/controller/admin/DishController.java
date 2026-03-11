@@ -105,13 +105,13 @@ public class DishController {
     }
 
     /**
-     * 起售禁售菜品
+     * 起售停售菜品
      * @param status
      * @param id
      * @return
      */
     @PostMapping("/status/{status}")
-    @ApiOperation("起售禁售菜品")
+    @ApiOperation("起售停售菜品")
     public Result startOrStop(@PathVariable Integer status, Long id) {
         log.info("启用禁用员工账号:{},{}", status, id);
         dishService.startOrStop(status,id);
