@@ -48,7 +48,7 @@ public class OrderTask {
         log.info("定时处理处于派送中的订单{}", LocalDateTime.now());
 
         LocalDateTime time = LocalDateTime.now().plusMinutes(-60);
-        List<Orders> ordersList = orderMapper.getByStatusAndOrderTimeLT(Orders.CANCELLED, time);
+        List<Orders> ordersList = orderMapper.getByStatusAndOrderTimeLT(Orders.DELIVERY_IN_PROGRESS, time);
 
         if (ordersList != null && ordersList.size() > 0) {
             for (Orders orders : ordersList) {
